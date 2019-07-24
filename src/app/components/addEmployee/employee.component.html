@@ -1,0 +1,15 @@
+<div class="container">
+    <br>
+    <form class="form-group">
+        <div>
+            <input type="text" placeholder="First name" class="form-control"  [(ngModel)]="user.firstName" name="firstName">
+            <br>
+            <input type="text" placeholder="Last name" class="form-control" [(ngModel)]="user.lastName" name="lastName">
+            <br>
+        </div>
+        <button class="btn btn-dark" (click)="insertEmployee(user)" onClick="window.location.reload();">Add new User</button>
+    </form>
+
+</div>
+
+

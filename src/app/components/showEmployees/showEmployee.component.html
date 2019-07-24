@@ -1,0 +1,66 @@
+<div class="container">
+    <br>
+    <table class="table table-bordered table-dark table-sm">
+        <tr>
+            <th>ID</th>
+            <th>First name</th>
+            <th>Last name</th>
+        </tr>
+        <tr *ngFor="let user of users">
+            <td>{{user?.idEmployee}}</td>
+            <td>{{user?.firstName}}</td>
+            <td>{{user?.lastName}}</td>
+        </tr>
+    </table>
+    <br>
+    <div class="input-group">
+        <input type="text"  placeholder="Write employee ID"   class="form-control"  [(ngModel)]="user.idEmployee" name="firstName">
+        <div class="input-group-append" id="button-addon4">
+            <button class="btn btn-outline-secondary" (click)="getEmployeeById(user)" (click)="showEdit()" >Find</button>
+        </div>
+    </div>
+    <br>
+    <form *ngIf="isEdit">
+    <table class="table table-bordered table-dark table-sm">
+        <tr>
+            <th>ID</th>
+            <th>First name</th>
+            <th>Last name</th>
+
+        </tr>
+            <td>{{findUser?.idEmployee}}</td>
+            <td>{{findUser?.firstName}}</td>
+            <td>{{findUser?.lastName}}</td>
+    </table>
+        </form>
+
+    <div class="input-group-append" id="button-addon5">
+        <button class="btn btn-outline-secondary" (click)="showEdit1()" >Sum of all the accounts</button>
+    </div>
+    <br>
+    <form *ngIf="isEdit1">
+        <table class="table table-bordered table-dark table-sm">
+            <tr>
+                <th>Sum of all the accounts</th>
+            </tr>
+            <td>{{ getTotal() }}</td>
+        </table>
+
+    </form>
+    <div class="input-group-append" id="button-addon6">
+        <button class="btn btn-outline-secondary" (click)="showEdit2()" >Richest user</button>
+    </div>
+    <br>
+    <form *ngIf="isEdit2">
+        <table class="table table-bordered table-dark table-sm">
+            <tr>
+                <th>Richest user</th>
+            </tr>
+            <td>{{ getMax() }}</td>
+        </table>
+
+    </form>
+</div>
+
+
+
